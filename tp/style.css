@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: coral;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+nav {
+    margin-top: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 5px;
+}
+
+nav a:hover {
+    border-bottom: 2px solid coral;
+}
+
+section {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: white;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+input[type=text], input[type=password] {
+    width: 200px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+input[type=submit] {
+    margin-top: 10px;
+    padding: 5px 20px;
+    background: #ccc;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 25px;
+    background-color: #ffe6cc;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+/* Styles pour les tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #3d3838;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #ffe6cc;
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    color: #333;
+}
+
+.table-produits {
+    border: 1px solid #ccc;
+}

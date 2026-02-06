@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produits>
+    <fruits>
+        <fruit>
+            <nom>Pomme</nom>
+            <origine>France</origine>
+            <prix_unitaire>2.5</prix_unitaire>
+        </fruit>
+        <fruit>
+            <nom>Banane</nom>
+            <origine>Équateur</origine>
+            <prix_unitaire>1.8</prix_unitaire>
+        </fruit>
+    </fruits>
+    <legumes>
+        <legume>
+            <nom>Carotte</nom>
+            <origine>Belgique</origine>
+            <prix_unitaire>1.2</prix_unitaire>
+        </legume>
+        <legume>
+            <nom>Tomate</nom>
+            <origine>Espagne</origine>
+            <prix_unitaire>3.0</prix_unitaire>
+        </legume>
+    </legumes>
+    <fleurs>
+        <fleur>
+            <nom>Rose</nom>
+            <origine>Pays-Bas</origine>
+            <prix_unitaire>4.5</prix_unitaire>
+        </fleur>
+        <fleur>
+            <nom>Tulipe</nom>
+            <origine>Pays-Bas</origine>
+            <prix_unitaire>2.8</prix_unitaire>
+        </fleur>
+    </fleurs>
+</produits>
