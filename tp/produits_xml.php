@@ -21,7 +21,7 @@
 
     <?php
     // Chargement du fichier XML
-    $xmlPath = 'C:\Users\Jihan\Downloads\data\commerce.xml';
+    $xmlPath = 'C:\Users\Jihan\Downloads\tpweb\tp\data\commerce.xml';
 
     if (!file_exists($xmlPath)) {
         echo "<p style='color: red;'>Le fichier commerce.xml est introuvable.</p>";
