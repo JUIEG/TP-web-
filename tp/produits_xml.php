@@ -13,11 +13,13 @@
     <a href="index.php">accueil</a>
     <a href="produits_json.php">Produit (json)</a>
     <a href="produits_xml.php">Produits (xml)</a>
+    <a href="produits_csv.php">Produits (csv)</a>
+
 </nav>
 
 <section style="margin-top: 15px;">
 
-    <h2>Fichier XML </h2>
+    <h2> Fichier XML </h2>
 
     <?php
     // Chargement du fichier XML
@@ -36,26 +38,31 @@
         exit;
     }
 
-    echo "<h3> Liste des produits :</h3>";
+    echo "<h3>Liste des produits :</h3>";
 
+    echo "<table class='table-produits' border='1' cellpadding='8' cellspacing='0'>";
+    echo "<thead>
+        <tr>
+            <th>Nom</th>
+            <th>Origine</th>
+            <th>Prix unitaire</th>
+        </tr>
+      </thead>
+      <tbody>";
 
-    foreach ($xml as $categorie => $items) {
-        echo "<h3>" . htmlspecialchars(ucfirst($categorie)) . "</h3>";
-
-        echo "<table class='table-produits' border='1' cellpadding='8' cellspacing='0'>";
-        echo "<thead><tr><th>Nom</th><th>Origine</th><th>Prix unitaire</th></tr></thead><tbody>";
-
-        foreach ($items as $produit) {
+    foreach ($xml as $categorie) {
+        foreach ($categorie as $produit) {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($produit->nom) . "</td>";
             echo "<td>" . htmlspecialchars($produit->origine) . "</td>";
-            echo "<td>" . htmlspecialchars($produit->prix_unitaire) . " €</td>";
+            echo "<td>" . htmlspecialchars($produit->prix_unitaire) . "</td>";
             echo "</tr>";
         }
-
-        echo "</tbody></table><br>";
     }
+
+    echo "</tbody></table>";
     ?>
+
 
 </section>
 

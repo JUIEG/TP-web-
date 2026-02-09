@@ -47,11 +47,15 @@ class Utilisateur
         echo "<p>C'est l'heure</p>";
     }
 
+//    public function miseEnFormeTime() {
+//        setlocale(LC_TIME, 'fr_FR.UTF-8', 'fr_FR', 'fr');
+//        $format = date("l m Y à H:i:s", $this->timestamp);
+//        return (strftime($format, $this->timestamp));
+//    }
     public function miseEnFormeTime() {
-        setLocale(LC_TIME, 'fr_FR.UTF-8');
-        $format = date("l m Y à H:i:s", $this->timestamp);
-        return (strftime($format, $this->timestamp));
+        return date("l d m Y à H:i:s", $this->timestamp);
     }
+
 
     public function information() {
         $dateCreation = $this->miseEnFormeTime();

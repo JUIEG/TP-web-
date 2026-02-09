@@ -13,9 +13,9 @@ $user = unserialize($_SESSION['user']);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Admin - TP PHP</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -25,15 +25,28 @@ $user = unserialize($_SESSION['user']);
     <a href="index.php">accueil</a>
     <a href="produits_json.php">Produit (json)</a>
     <a href="produits_xml.php">Produits (xml)</a>
+    <a href="produits_csv.php">Produit (csv)</a>
 </nav>
 
+<?php
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+?>
+
 <section style="margin-top: 15px;">
-    <h1><strong><?php echo htmlspecialchars($user->getLogin()); ?></strong></h1>
+    <h1><strong>Admin</strong></h1>
 
-    <p>Bonjour <?php echo htmlspecialchars($user->getLogin()); ?> : <?php echo htmlspecialchars($user->information()); ?></p>
-
-    <?php echo $user; ?>
+    <p>
+        Bonjour <?php echo htmlspecialchars($user->getLogin()); ?> :
+        <?php echo htmlspecialchars($user->information()); ?>
+    </p>
 </section>
+
 
 <footer>PHP semestre 4 - Hoguin</footer>
 

@@ -11,8 +11,9 @@
 
 <nav>
     <a href="index.php">accueil</a>
-    <a href="produits_json.php">Produit (json)</a>
+    <a href="produits_json.php">Produits (json)</a>
     <a href="produits_xml.php">Produits (xml)</a>
+    <a href="produits_csv.php">Produits (csv)</a>
 </nav>
 
 <section>
