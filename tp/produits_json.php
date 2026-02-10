@@ -6,6 +6,46 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 ?>
+<?php
+
+if (!isset($_SESSION['user'])) {
+    header("Location: index.php");
+    exit();
+}
+
+$jsonFile = 'U:\tpweb\tp\data\data.json';
+$jsonString = file_get_contents($jsonFile);
+$data = json_decode($jsonString, true);
+
+if ($data === null) {
+    die("Erreur lors du décodage du fichier JSON.");
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $categorie = $_POST['categorie'];
+    $nom = $_POST['nom'];
+    $origine = $_POST['origine'];
+    $prix = $_POST['prix'];
+
+    $nouveauProduit = [
+            "nom" => $nom,
+            "origine" => $origine,
+            "prix_unitaire" => $prix
+    ];
+
+    $data[$categorie][] = $nouveauProduit;
+
+    file_put_contents(
+            $jsonFile,
+            json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+    );
+
+    header("Location: produits_json.php");
+    exit();
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,6 +84,7 @@ if (!isset($_SESSION['user'])) {
 
     // Décodage JSON
     $data = json_decode($jsonString, true);
+
     echo "<pre>";
     print_r($data);
     echo "</pre>";
@@ -88,10 +129,13 @@ if (!isset($_SESSION['user'])) {
     <form method ='post'>
         <label>Catégorie :</label>
         <select name="categorie" required>
+<!--            menu deroulant-->
             <?php foreach ($data as $categorie => $items): ?>
                 <option value="<?= htmlspecialchars($categorie) ?>">
                     <?= htmlspecialchars($categorie) ?>
                 </option>
+                <!--            diff options-->
+
             <?php endforeach; ?>
         </select><br><br>
 
@@ -102,7 +146,7 @@ if (!isset($_SESSION['user'])) {
         <input type="text" name="origine" required><br><br>
 
         <label>Prix (€) :</label>
-        <input type="number" step="0.01" name="prix" required><br><br>
+        <input type="number" step="any" name="prix" required><br><br>
 
         <button type="submit">Ajouter</button>
     </form>
