@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,19 +19,27 @@
 <header>TP PHP - semestre 4</header>
 
 <nav>
-    <a href="index.php">accueil</a>
-    <a href="produits_json.php">Produit (json)</a>
-    <a href="produits_xml.php">Produits (xml)</a>
-    <a href="produits_csv.php">Produits (csv)</a>
+    <a href="index.php">Accueil</a>
 
+    <?php if (!isset($_SESSION['user'])): ?>
+        <a href="connexion.php">Se connecter</a>
+    <?php else: ?>
+        <a href=" admin.php"> Admin</a>
+        <a href="produits_json.php">Produits (JSON)</a>
+        <a href="produits_xml.php">Produits (XML)</a>
+        <a href="produits_csv.php">Produits (CSV)</a>
+        <a href="logout.php">Déconnexion</a>
+
+    <?php endif; ?>
 </nav>
+
 
 <section style="margin-top: 15px;">
 
     <h2>Fichier CSV </h2>
 
     <?php
-$csvPath = 'C:\Users\Jihan\Downloads\tpweb\tp\data\produits.csv';
+$csvPath = 'U:\tpweb\tp\data\produits.csv';
 
 if (!file_exists($csvPath)) {
     echo "<p style='color: red;'>Le fichier commerce.csv est introuvable.</p>";

@@ -22,11 +22,14 @@ $user = unserialize($_SESSION['user']);
 <header>TP PHP - semestre 4</header>
 
 <nav>
-    <a href="index.php">accueil</a>
-    <a href="produits_json.php">Produit (json)</a>
-    <a href="produits_xml.php">Produits (xml)</a>
-    <a href="produits_csv.php">Produit (csv)</a>
+    <a href="index.php">Accueil</a>
+    <a href="admin.php">Admin</a>
+    <a href="produits_json.php">Produits (JSON)</a>
+    <a href="produits_xml.php">Produits (XML)</a>
+    <a href="produits_csv.php">Produits (CSV)</a>
+    <a href="logout.php">Déconnexion</a>
 </nav>
+
 
 <?php
 echo "<pre>";
