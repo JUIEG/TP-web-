@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="origine" required><br><br>
 
         <label>Prix (€) :</label>
-        <input type="number" step="any" name="prix" required><br><br>
+        <input type="number" step="any" min=0 name="prix" required><br><br>
 
         <button type="submit">Ajouter</button>
     </form>
